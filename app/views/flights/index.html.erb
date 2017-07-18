@@ -1,0 +1,8 @@
+<%= render 'search_form' %>
+<% if !@flights.blank? %>
+	<ul>
+		<%= @flights.each do |f| %>
+			<li><%= f %></li>
+		<% end %>
+	</ul>
+<% end %>
