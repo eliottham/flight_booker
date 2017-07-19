@@ -1,9 +1,9 @@
 	<h3>Flight # Depart Arive Travel Time</h3>
-	<%= form_for :booking, url: bookings_new_path, method: 'get' do |f| %>
+	<%= form_for :booking, url: new_booking_path, method: 'get' do |f| %>
 		<%= f.hidden_field :passengers, value: params[:search][:passengers] %>
 		<% @flights.each do |flight| %>
 			<%= f.radio_button :flight_choice, flight.id %>
 			<%= f.label :flight_choice, flight.number %>
 		<% end %>
-		<%= f.submit "Book Flight" %>
+		<%= f.submit "Select Flight" %>
 	<% end %>

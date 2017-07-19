@@ -16,10 +16,11 @@ pairs = Airport.all.to_a.permutation(2).to_a
 
 pairs.each do |pair|
 	for i in 0..10
+		duration = rand(3..6)
 	  rand(1..3).times do
 	  	Flight.create(date: Time.new.to_date + i.day,
 								    time: Time.new + rand(24).hour,
-								    duration: rand(3..6),
+								    duration: duration,
 								    from_airport: pair[0],
 								 	  to_airport: pair[1])
 	  end

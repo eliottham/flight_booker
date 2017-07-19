@@ -1,6 +1,8 @@
 class Flight < ApplicationRecord
 	belongs_to :from_airport, class_name: "Airport"
 	belongs_to :to_airport, class_name: "Airport"
+	has_many :bookings
+	has_many :passengers, through: :bookings
 
 	scope :available_flights, -> (search) { Flight.where(from_airport_id: search[:from_airport_id],
 																									     to_airport_id:   search[:to_airport_id],
@@ -11,9 +13,6 @@ class Flight < ApplicationRecord
 	end
 
 	def number
-		rand(1000..9999)
+		id + 2147
 	end
-
-
-
 end

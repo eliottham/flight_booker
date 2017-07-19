@@ -1,4 +1,2 @@
 <%= render 'search_form' %>
-<% if !@flights.blank? %>
-	<%= render 'book_form' %>
-<% end %>
+<%= render 'flight_choice_form' if !@flights.blank? %>

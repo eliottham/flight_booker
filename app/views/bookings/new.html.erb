@@ -1,1 +1,5 @@
-<%= @passengers %>
+<h1><%= "#{@flight.from_airport.code} to #{@flight.to_airport.code}" %></h1>
+<p>Origin: <%= @flight.from_airport.name %></p>
+<p>Destination: <%= @flight.to_airport.name %></p>
+<p>Travel Date: <%= date_format(@flight.date) %></p>
+<%= render 'booking_form' %>
