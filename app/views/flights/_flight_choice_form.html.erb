@@ -1,4 +1,4 @@
-	<h3>Flight # Depart Arive Travel Time</h3>
+<h3>Flight # Depart Arive Travel Time</h3>
 	<%= form_for :booking, url: new_booking_path, method: 'get' do |f| %>
 		<%= f.hidden_field :passengers, value: params[:search][:passengers] %>
 		<% @flights.each do |flight| %>

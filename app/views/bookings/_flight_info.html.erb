@@ -1,0 +1,10 @@
+<h1><%= "#{@booking.flight.from_airport.code} to #{@booking.flight.to_airport.code}" %></h1>
+<p>
+	<b>Origin:</b> <%= @booking.flight.from_airport.name %>
+</p>
+<p>
+	<b>Destination:</b> <%= @booking.flight.to_airport.name %>
+</p>
+<p>
+	<b>Travel Date:</b> <%= date_format(@booking.flight.date) %>
+</p>

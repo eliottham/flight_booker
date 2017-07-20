@@ -1,5 +1,18 @@
-<h1><%= "#{@flight.from_airport.code} to #{@flight.to_airport.code}" %></h1>
-<p>Origin: <%= @flight.from_airport.name %></p>
-<p>Destination: <%= @flight.to_airport.name %></p>
-<p>Travel Date: <%= date_format(@flight.date) %></p>
-<%= render 'booking_form' %>
+<%= render 'flight_info' %>
+
+<%= form_for @booking do |f| %>
+	<%= f.hidden_field :flight_id, value: @flight.id %>
+	<% i = 1 %>
+	<%= f.fields_for :passengers do |p| %>
+		<h4>Passenger <%= i %></h4>
+		<%= p.label "Name:" %>
+		<%= p.text_field :name  %>
+		<%= p.label "Email:" %>
+		<%= p.text_field :email %>
+		<br>
+		<% i += 1 %>
+	<% end %>
+
+	<br>
+	<%= f.submit "Book Flight" %>
+<% end %>

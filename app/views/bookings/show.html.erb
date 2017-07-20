@@ -1,0 +1,7 @@
+<%= render 'flight_info' %>
+<h4>Passengers:</h4>
+<ul>
+	<% @booking.passengers.each do |pass| %>
+		<li><%= pass.name %></li>
+	<% end %>
+</ul>
