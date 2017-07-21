@@ -14,4 +14,8 @@ class Flight < ApplicationRecord
 	def number
 		id + 2147
 	end
+
+	def info_string
+		"#{time.strftime("%I:%M %p")} #{(time + duration.hour).strftime("%I:%M %p")} #{duration} hours"
+	end
 end

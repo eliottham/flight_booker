@@ -1,2 +1,12 @@
-<%= render 'search_form' %>
-<%= render 'flight_choice_form' if !@flights.blank? %>
+<div class="search">
+	<%= render 'search_form' %>
+	<% if !@flights.blank? %>
+		<div class="header">
+			<div class="info">Flight #</div>
+			<div class="info">Depart</div>
+			<div class="info">Arrive</div>
+			<div class="info">Travel<br>Time</div>
+		</div>
+		<%= render 'flight_choice_form' %>
+	<% end %>
+</div>

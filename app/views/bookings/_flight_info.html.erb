@@ -1,10 +1,10 @@
-<h1><%= "#{@booking.flight.from_airport.code} to #{@booking.flight.to_airport.code}" %></h1>
+<h1><%= "#{@flight.from_airport.code} to #{@flight.to_airport.code}" %></h1>
 <p>
-	<b>Origin:</b> <%= @booking.flight.from_airport.name %>
+	<b>Origin:</b> <%= @flight.from_airport.name %>
 </p>
 <p>
-	<b>Destination:</b> <%= @booking.flight.to_airport.name %>
+	<b>Destination:</b> <%= @flight.to_airport.name %>
 </p>
 <p>
-	<b>Travel Date:</b> <%= date_format(@booking.flight.date) %>
+	<b>Travel Date:</b> <%= date_format(@flight.date) %>
 </p>
